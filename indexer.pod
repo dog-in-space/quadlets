@@ -1,0 +1,10 @@
+[Pod]
+Network=pasta:--map-gw
+PodmanArgs=--infra-name infra-indexer
+PodName=indexer
+PublishPort=9696:9696
+ServiceName=indexer
+Volume=/data:/data:z
+
+[Install]
+WantedBy=default.target

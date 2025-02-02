@@ -1,0 +1,15 @@
+[Unit]
+BindsTo=prowlarr.service
+
+[Container]
+ContainerName=flaresolverr
+Environment=LOG_LEVEL=info
+Image=ghcr.io/flaresolverr/flaresolverr:latest
+Pod=indexer.pod
+PodmanArgs=--interactive --tty
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

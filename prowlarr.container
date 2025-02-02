@@ -1,0 +1,17 @@
+[Unit]
+Description=Podman container for prowlarr
+Documentation=https://docs.linuxserver.io/images/docker-prowlarr
+Requires=flaresolverr.service
+
+[Container]
+ContainerName=prowlarr
+Environment=PUID=0 PGID=0 TZ=Etc/UTC
+Image=lscr.io/linuxserver/prowlarr:1.31.1-nightly
+Pod=indexer.pod
+Volume=/opt/prowlarr:/config:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
