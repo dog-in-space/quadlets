@@ -1,0 +1,19 @@
+[Unit]
+BindsTo=protonwire.service
+Description=Podman container for qbittorrent
+Documentation=https://github.com/tprasadtp/protonvpn-docker/tree/master/docs
+
+[Container]
+ContainerName=qbittorrent
+Environment=PUID=0 PGID=0 UMASK=002 TZ=Etc/UTC WEBUI_PORTS=1337/tcp,1337/udp
+Image=ghcr.io/hotio/qbittorrent:release-5.0.2
+Network=container:protonwire
+Pod=torrent.pod
+PodmanArgs=--interactive --tty
+Volume=/opt/qbittorrent:/config:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

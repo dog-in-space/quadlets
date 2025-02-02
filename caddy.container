@@ -1,0 +1,16 @@
+[Container]
+ContainerName=caddy
+Image=ghcr.io/iarekylew00t/caddy-cloudflare:2.8.4
+PodmanArgs=--interactive --tty
+PublishPort=443:443
+PublishPort=80:80
+Secret=cf-api-pink,type=env,target=CF_API_TOKEN_PINK
+Volume=/opt/caddy/data:/data:Z
+Volume=/opt/caddy/config:/config:Z
+Volume=/opt/caddy/Caddyfile:/etc/caddy/Caddyfile:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

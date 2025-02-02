@@ -1,0 +1,22 @@
+[Container]
+AddCapability=NET_ADMIN
+ContainerName=protonwire
+Environment=PROTONVPN_SERVER=185.230.125.34 DEBUG=1 KILL_SWITCH=0
+HealthCmd=protonwire check --service-status-file --silent
+HealthInterval=120s
+HealthOnFailure=stop
+HealthStartPeriod=20s
+Image=ghcr.io/tprasadtp/protonwire:7.5.3
+Pod=torrent.pod
+PodmanArgs=--interactive --tty
+RunInit=true
+Secret=proton-wireguard,type=env,target=WIREGUARD_PRIVATE_KEY
+Sysctl=net.ipv4.conf.all.rp_filter=2 net.ipv6.conf.all.disable_ipv6=1
+Timezone=local
+Tmpfs=/tmp
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
