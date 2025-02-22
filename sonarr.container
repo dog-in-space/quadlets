@@ -1,0 +1,13 @@
+[Container]
+AutoUpdate=registry
+ContainerName=sonarr
+Environment=PUID=0
+Environment=PGID=0
+Environment=TZ=Etc/UTC
+Image=lscr.io/linuxserver/sonarr:latest
+PublishPort=8989:8989
+Volume=/opt/sonarr:/config:Z
+Volume=/data:/data:z
+
+[Install]
+WantedBy=default.target

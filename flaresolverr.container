@@ -5,7 +5,7 @@ BindsTo=prowlarr.service
 ContainerName=flaresolverr
 Environment=LOG_LEVEL=info
 Image=ghcr.io/flaresolverr/flaresolverr:latest
-Pod=indexer.pod
+Pod=torrent.pod
 PodmanArgs=--interactive --tty
 
 [Service]

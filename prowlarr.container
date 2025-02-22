@@ -4,10 +4,11 @@ Documentation=https://docs.linuxserver.io/images/docker-prowlarr
 Requires=flaresolverr.service
 
 [Container]
+AutoUpdate=registry
 ContainerName=prowlarr
 Environment=PUID=0 PGID=0 TZ=Etc/UTC
-Image=lscr.io/linuxserver/prowlarr:1.31.1-nightly
-Pod=indexer.pod
+Image=lscr.io/linuxserver/prowlarr:latest
+Pod=torrent.pod
 Volume=/opt/prowlarr:/config:Z
 
 [Service]

@@ -1,14 +1,11 @@
 [Container]
+AutoUpdate=registry
 ContainerName=radarr
-
 Environment=PUID=0 
 Environment=PGID=0 
 Environment=TZ=Etc/UTC
-
-Image=lscr.io/linuxserver/radarr:5.17.2
-
+Image=lscr.io/linuxserver/radarr:latest
 PublishPort=7878:7878
-
 Volume=/opt/radarr:/config:Z
 Volume=/data:/data:z
 

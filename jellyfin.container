@@ -1,11 +1,12 @@
 [Container]
 AddDevice=/dev/dri:rwm
+AutoUpdate=registy
 ContainerName=jellyfin
 Environment=PUID=0 
 Environment=GUID=0 
 Environment=TZ=Etc/UTC 
 Environment=DOCKER_MODS=linuxserver/mods:jellyfin-opencl-intel
-Image=lscr.io/linuxserver/jellyfin:10.10.5
+Image=lscr.io/linuxserver/jellyfin:latest
 PodmanArgs=--interactive --tty
 PublishPort=8096:8096
 PublishPort=8920:8920

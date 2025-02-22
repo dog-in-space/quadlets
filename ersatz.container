@@ -1,0 +1,14 @@
+[Container]
+AddDevice=/dev/dri:/dev/dri
+AutoUpdate=registry
+ContainerName=ersatz
+Image=docker.io/jasongdove/ersatztv:latest-vaapi
+PublishPort=8409:8409/tcp
+Volume=/data:/data:z
+Volume=/opt/ersatz:/root/.local/share/ersatztv:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

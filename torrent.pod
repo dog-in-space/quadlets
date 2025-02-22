@@ -3,6 +3,7 @@ Network=pasta:--map-gw
 PodmanArgs=--infra-name infra-torrent
 PodName=torrent
 PublishPort=1337:1337
+PublishPort=9696:9696
 ServiceName=torrent
 Volume=/data:/data:z
 

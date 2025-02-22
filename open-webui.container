@@ -1,0 +1,14 @@
+[Container]
+AutoUpdate=registry
+ContainerName=open-webui
+Environment=OPENAI_API_BASE_URL=https://openrouter.ai/api/v1
+Image=ghcr.io/open-webui/open-webui:latest
+PublishPort=8080:8080
+Secret=openrouter-api,type=env,target=OPENAI_API_KEY
+Volume=/opt/open-webui:/app/backend/data:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
